@@ -38,9 +38,13 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body>
     <nav class="top-nav">
         <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
+            <a href="<?= $this->Url->build('/') ?>">
+                <?= $this->ContentBlock->image('logo', ['style' => 'max-width: 350px; max-height: 75px']); ?>
+            </a>
         </div>
         <div class="top-nav-links">
+            <?= $this->Html->link('Content Blocks', ['plugin' => 'ContentBlocks', 'controller' => 'ContentBlocks', 'action' => 'index']) ?>
+            ::
             <?= $this->Html->link('Articles', ['controller' => 'articles', 'action' => 'index']) ?>
             ::
             <?= $this->Html->link('Tags', ['controller' => 'tags', 'action' => 'index']) ?>

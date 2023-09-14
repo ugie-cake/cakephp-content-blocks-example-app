@@ -29,7 +29,7 @@ $this->disableAutoLayout();
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        CakePHP: the rapid development PHP framework:
+        <?= $this->ContentBlock->text('website-title'); ?>
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
@@ -46,11 +46,13 @@ $this->disableAutoLayout();
     <header>
         <div class="container text-center">
             <a href="https://github.com/ugie-cake" target="_blank" rel="noopener">
-                <img alt="CakePHP" src="https://cakephp.org/v2/img/logos/CakePHP_Logo.svg" width="350" />
+                <?= $this->ContentBlock->image('logo', ['style' => 'max-width: 350px; max-height: 200px']); ?>
             </a>
             <h1>
-                ugie-cake/cakephp-content-blocks-example-app
+                <?= $this->ContentBlock->text('website-title'); ?>
             </h1>
+            <?= $this->Html->link('Content Blocks', ['plugin' => 'ContentBlocks', 'controller' => 'ContentBlocks', 'action' => 'index']) ?>
+            ::
             <?= $this->Html->link('Articles', ['controller' => 'articles', 'action' => 'index']) ?>
             ::
             <?= $this->Html->link('Tags', ['controller' => 'tags', 'action' => 'index']) ?>
@@ -63,14 +65,15 @@ $this->disableAutoLayout();
             <div class="content">
                 <div class="row">
                     <div class="column">
-                        Example app showcasing the <code>ugie-cake/cakephp-content-blocks</code> plugin.
+                        <?= $this->ContentBlock->html('home-content'); ?>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="copyright">
-                (c) Copyright 2023, enter copyright owner here.
+                <?= $this->ContentBlock->text('copyright-message'); ?>
+            </div>
             </div>
         </div>
     </main>
