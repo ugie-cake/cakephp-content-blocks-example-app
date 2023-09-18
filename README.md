@@ -27,5 +27,5 @@ bin/cake migrations migrate --plugin=ContentBlocks
 **Seed database with required content blocks**
 
 ```
-bin/cake migrations migrate --plugin=ContentBlocks
+bin/cake migrations seed --seed ContentBlocksSeed
 ```
